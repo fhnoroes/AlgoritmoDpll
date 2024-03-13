@@ -121,11 +121,6 @@ def unitária(listclausula, variaveis):
 
     return listclausula, variaveis
    
-
-
-   
-
-
 def pura(listclausula,variaveis):
 #verificando elemento puro
     lista_aux = []
@@ -190,7 +185,7 @@ def atribui(listclausula,variaveis):
                     lista = []
                     lista.append(str(int(e)*-1))
                     listclausula = lista_recuperadahist[len(lista_recuperadahist)-1]
-                    variaveis = lista_varrecuperada[len(lista_recuperadahist)-1]
+                    variaveis = lista_varrecuperada[:-1]
                     variaveis.append(str(int(e)*-1))
                     listclausula.append(lista)
                     #caso o retorno seja insatisfazível ele exclui o histórico salvo e tenta com a var negativa
@@ -202,7 +197,7 @@ def atribui(listclausula,variaveis):
                         with open('histvar.json', 'r') as arquivo_json:
                             lista2_json = arquivo_json.read()
                             lista_varrecuperada = json.loads(lista2_json)
-                        variaveis = lista_varrecuperada[len(lista_recuperadahist)-1]
+                        variaveis = lista_varrecuperada[:-1]
 
                         return "É insatisfazível", variaveis
                     else:
