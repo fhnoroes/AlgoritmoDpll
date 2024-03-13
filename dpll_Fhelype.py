@@ -210,7 +210,7 @@ def atribui(listclausula,variaveis):
 r1, r2 = dpll(ler_doc('Teste2.cnf'))
 #chamada da função com dois retornos, r1= satisfazível ou não, r2= variáveis que fazem eles ser satisfeito
 print(f"RESULTADO: {r1}")
-if r2 == []:
+if r1 == "É insatisfazível":
     print("Não há nenhuma valoração que satisfaça")
 else:
     print("A valoração que satisfaz é:")
